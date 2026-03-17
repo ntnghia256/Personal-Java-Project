@@ -4,9 +4,14 @@ import global.exceptions.InvalidAmountException;
 
 public class SavingAccount extends Account {
     private static final double WITHDRAW_FEE = 5000;
+    private static double interestRate = 0.05;
 
     public SavingAccount(String accountNumber, String owner, double balance) {
         super(accountNumber, owner, balance);
+    }
+
+    public double calculateInterest(double balance) {
+        return balance * interestRate;
     }
 
     @Override

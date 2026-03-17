@@ -30,6 +30,9 @@ public class VBankSystem {
             System.err.println("LOI HE THONG: " + e.getMessage());
         }
 
+        // Print list user of VBank
+        System.out.println(manager.getOwnerNames());
+
         System.out.println("\nTong tai san tai VBank: " + String.format("%,.0f", manager.getTotalBankBalance()) + " VND");
     }
 }

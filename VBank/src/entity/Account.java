@@ -30,7 +30,7 @@ public abstract class Account {
     public abstract void withdraw(double amount) throws InsufficientBalanceException;
 
     // Unchecked exception - Handle when user input amout below 0
-    public void deposit(double amount) {
+    public synchronized void deposit(double amount) {
         if (amount <= 0) throw new InvalidAmountException("Deposit amount must be positive.");
         this.balance += amount;
     }
