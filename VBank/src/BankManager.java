@@ -12,7 +12,7 @@ public class BankManager {
         accounts.put(acc.getAccountNumber(), acc);
     }
 
-    public Account geAccount(String accNum) {
+    public Account getAccount(String accNum) {
         return accounts.get(accNum);
     }
 
