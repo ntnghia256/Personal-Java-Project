@@ -93,7 +93,7 @@ public class BankManager {
 
         executor.shutdown();
         while (!executor.isTerminated()) {
-            // / Đợi cho đến khi tất cả các thread làm xong việc
+            // Đợi cho đến khi tất cả các thread làm xong việc
         }
         System.out.println("Hoàn thành tính lãi toàn hệ thống!");
     }
