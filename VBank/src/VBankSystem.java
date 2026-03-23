@@ -1,4 +1,5 @@
 import entity.Account;
+import entity.SavingAccount;
 import global.exceptions.InsufficientBalanceException;
 import global.exceptions.InvalidAmountException;
 
@@ -11,27 +12,32 @@ public class VBankSystem {
         manager.addAccount(new SavingAccount("V002", "Tran Thi B", 2000000));
         manager.addAccount(new SavingAccount("V003", "Le Van C", 15000000));
 
-        System.out.println("--- DANH SACH TAI KHOAN GIAU CO ---");
+        System.out.println("--- LIST RICK ACCOUNTS ---");
         manager.getWealthyAccounts().forEach(System.out::println);
 
-        // Thu nghiem Exception
+        // Demo Exception
         Account accA = manager.getAccount("V001");
         try {
             System.out.println("\nThuc hien rut tien cho Nguyen Van A...");
-            accA.withdraw(60000000); // Se gay loi
+            accA.withdraw(60000000); // Error
         } catch (InsufficientBalanceException e) {
             System.err.println("LOI: " + e.getMessage());
         }
 
         try {
             System.out.println("\nThuc hien gui tien am...");
-            accA.deposit(-100); // Se gay loi Runtime
+            accA.deposit(-100); // Will be Error Runtime
         } catch (InvalidAmountException e) {
             System.err.println("LOI HE THONG: " + e.getMessage());
         }
 
         // Print list user of VBank
         System.out.println(manager.getOwnerNames());
+
+        // Calculate the interest
+        manager.runInterestTask();
+        // Print all account after calculate the interest
+        manager.getAllAccounts().forEach(System.out::println);
 
         System.out.println("\nTong tai san tai VBank: " + String.format("%,.0f", manager.getTotalBankBalance()) + " VND");
     }

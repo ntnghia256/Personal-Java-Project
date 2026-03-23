@@ -1,4 +1,5 @@
-import entity.Account;
+package entity;
+
 import global.exceptions.InsufficientBalanceException;
 import global.exceptions.InvalidAmountException;
 
@@ -20,11 +21,11 @@ public class SavingAccount extends Account {
 
         double totalRequired =  amount + WITHDRAW_FEE;
         if (totalRequired > balance) {
-            throw new InsufficientBalanceException("The balance do not enough to deposit " + amount + " - Fee: " + WITHDRAW_FEE);
+            throw new InsufficientBalanceException("The balance do not enough to withdraw " + amount + " - Fee: " + WITHDRAW_FEE);
         }
 
         balance -= totalRequired;
-        System.out.println("Deposit successfully " + amount + " - Fee: " + WITHDRAW_FEE);
+        System.out.println("Withdraw successfully " + amount + " - Fee: " + WITHDRAW_FEE);
     }
     
 }

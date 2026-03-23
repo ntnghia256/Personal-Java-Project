@@ -2,15 +2,16 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 import entity.Account;
+import entity.SavingAccount;
 
 public class BankManager {
     private Map<String, Account> accounts = new HashMap<>();
@@ -23,6 +24,11 @@ public class BankManager {
         return accounts.get(accNum);
     }
 
+    // Get all balance accounts
+    public List<Account> getAllAccounts() {
+        return new ArrayList<>(accounts.values());
+    }
+
     // Find the rich account
     public List<Account> getWealthyAccounts() {
         return accounts.values().stream()
@@ -30,7 +36,7 @@ public class BankManager {
             .collect(Collectors.toList());
     }
 
-    // Caculate total the sum balance of the bank
+    // Calculate total the sum balance of the bank
     public double getTotalBankBalance() {
         return accounts.values().stream()
                     .mapToDouble(Account::getBalance)
@@ -53,9 +59,9 @@ public class BankManager {
                 writer.write(line);
                 writer.newLine();
             }
-            System.out.println("Luu du lieu thanh cong vao " + filename);
+            System.out.println("Save data successfully into " + filename);
         } catch (Exception e) {
-            System.err.println("Loi khi ghi fileL " + e.getMessage());
+            System.err.println("Error when saving file " + e.getMessage());
         }
     }
 
@@ -69,7 +75,7 @@ public class BankManager {
                     String name = data[1];
                     double bal = Double.parseDouble(data[2]);
                     // Create object and add to Map
-                    this.addAccount(new SavingAccount(id, name, bal)); 
+                    this.addAccount(new SavingAccount(id, name, bal));
                 }
             }
             System.out.println("Read data successfully from file " + filename);
@@ -78,23 +84,23 @@ public class BankManager {
         }
     }
 
-    // Multithread - Calculate interest
+    // Multithreading - Calculate interest
     public void runInterestTask() {
         ExecutorService executor = Executors.newFixedThreadPool(3);
         for (Account acc : accounts.values()) {
             executor.execute(() -> {
-                if (acc instanceof Account) {
+                if (acc != null) {
                 SavingAccount sa = (SavingAccount) acc;
                 sa.deposit(sa.calculateInterest(sa.getBalance()));
-                System.out.println("Da tinh lai cho: " + sa.getAccountNumber() + " boi " + Thread.currentThread().getName());
+                System.out.println("Calculated the interest for: " + sa.getAccountNumber() + " by " + Thread.currentThread().getName());
             }
             });
         }
 
         executor.shutdown();
         while (!executor.isTerminated()) {
-            // Đợi cho đến khi tất cả các thread làm xong việc
+            // Wait for threads execute done!
         }
-        System.out.println("Hoàn thành tính lãi toàn hệ thống!");
+        System.out.println("Finished calculate the interest of VBank System!");
     }
 }
