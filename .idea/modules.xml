@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Mini-Project.iml" filepath="$PROJECT_DIR$/.idea/Java-Mini-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniWarehouse/MiniWarehouse.iml" filepath="$PROJECT_DIR$/MiniWarehouse/MiniWarehouse.iml" />
       <module fileurl="file://$PROJECT_DIR$/VBank/VBank.iml" filepath="$PROJECT_DIR$/VBank/VBank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generics/generics.iml" filepath="$PROJECT_DIR$/generics/generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/spam-filter-service/spam-filter-service.iml" filepath="$PROJECT_DIR$/spam-filter-service/spam-filter-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/stock-trading/stock-trading.iml" filepath="$PROJECT_DIR$/stock-trading/stock-trading.iml" />
     </modules>
