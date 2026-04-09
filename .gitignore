@@ -1,0 +1,56 @@
+### --- IDE & System Files --- ###
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+
+# VS Code
+.vscode/
+
+# Hệ điều hành
+Thumbs.db
+.DS_Store
+
+
+### --- Java & Build Tools --- ###
+# Thư mục biên dịch của dự án Java thường (bin)
+**/bin/
+
+# Thư mục biên dịch của dự án Maven (target)
+**/target/
+
+# Log files
+*.log
+
+
+### --- Maven specific --- ###
+# File chứa thông tin release hoặc build lỗi của Maven
+release.properties
+pom.xml.releaseBackup
+pom.xml.tagConfBackup
+pom.xml.nextSnapshot
+pom.xml.buildNumber
+
+
+### --- Optional: Package Files --- ###
+# Nếu bạn không muốn đưa các file nén/thực thi lên Git
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
