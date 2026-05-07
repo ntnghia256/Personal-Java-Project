@@ -1,3 +1,8 @@
+import data_structures.map.CharFrequency;
+import recursion.RecursionEx;
+import searching.BinarySearch;
+import sorting.BubbleSort;
+
 public class App {
     public static void main(String[] args) throws Exception {
         // Check prime number
@@ -27,9 +32,9 @@ public class App {
         System.out.println("Character frequency result is: ");
         CharFrequency.count(charFrequency);
 
-        // Factorial - Giaithua
+        // recursion.Factorial - Giaithua
         int factorial = 5;
-        System.out.println("Ket qua " + factorial + " giai thua la: " + Factorial.factorial(factorial));
+        System.out.println("Ket qua " + factorial + " giai thua la: " + RecursionEx.factorial(factorial));
 
         // Reverse string
         String reverseStirng = "coffee ket rat ngon";

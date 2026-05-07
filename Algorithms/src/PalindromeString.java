@@ -1,4 +1,5 @@
 public class PalindromeString {
+    // Chuoi can bang
     public static boolean isPalindromeString(String string) {
         int left = 0;
         int right = string.length() - 1;

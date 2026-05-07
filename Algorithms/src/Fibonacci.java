@@ -10,4 +10,8 @@ public class Fibonacci {
         System.out.print("The " + n + "th Fibonacci is: ");
         return b;
     }
+
+    public static void main(String[] args) {
+        System.out.println(findNthFibonacci(10));
+    }
 }

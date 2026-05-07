@@ -1,3 +1,5 @@
+package data_structures.map;
+
 import java.util.HashMap;
 
 public class CharFrequency {
@@ -7,5 +9,11 @@ public class CharFrequency {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
         map.forEach((k, v) -> System.out.println(k + ": " + v));
+    }
+
+    public static void main(String[] args) {
+        String name = "honguyentrongnghia-fresherJavaFPT";
+        System.out.println("Character frequency result is: ");
+        count(name);
     }
 }

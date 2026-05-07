@@ -1,3 +1,5 @@
+package sorting;
+
 public class BubbleSort {
     public static int[] sort(int[] arr) {
         int n = arr.length;

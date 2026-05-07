@@ -1,4 +1,5 @@
 public class PrimeNumber {
+    // So nguyen to
     public static boolean isPrime(int n) {
         if (n < 1) return false;
         for (int i = 2; i <= Math.sqrt(n); i++) {
